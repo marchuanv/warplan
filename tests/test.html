@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Balance Tests</title>
+	<script type="text/javascript" src="../lib/detachmentfactory.js"></script>
+	<script type="text/javascript" src="../lib/modelfactory.js"></script>
+	<script type="text/javascript" src="../lib/rulefactory.js"></script>
+</head>
+<body>
+	<script>
+
+		const detachmentFactory = new DetachmentFactory();
+		const detachment = detachmentFactory.create("spearhead");
+		console.log(detachment);
+
+		const ruleFactory = new RuleFactory();
+		const rule = ruleFactory.create("unitcap","KABAL");
+		console.log(rule);
+
+		const factory = new ModelFactory();
+		const model = factory.create("kabal warrior", "KABAL");
+		console.log(model);
+	</script>
+</body>
+</html>
