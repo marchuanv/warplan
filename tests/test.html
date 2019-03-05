@@ -2,24 +2,29 @@
 <html>
 <head>
 	<title>Balance Tests</title>
-	<script type="text/javascript" src="../lib/detachmentfactory.js"></script>
-	<script type="text/javascript" src="../lib/modelfactory.js"></script>
-	<script type="text/javascript" src="../lib/rulefactory.js"></script>
+	
+	<script type="text/javascript" src="../lib/detachment.js"></script>
+	<script type="text/javascript" src="../lib/detachmentrule.js"></script>
+
+	<script type="text/javascript" src="../lib/model.js"></script>
+	<script type="text/javascript" src="../lib/modelrule.js"></script>
+
+	<script type="text/javascript" src="../lib/unit.js"></script>
+	<script type="text/javascript" src="../lib/unitrule.js"></script>
+	
 </head>
 <body>
 	<script>
 
-		const detachmentFactory = new DetachmentFactory();
-		const detachment = detachmentFactory.create("spearhead");
-		console.log(detachment);
+		const vanguardAttachment = new Detachment("spearhead");
+		const kabalWarriorModel = new Model("kabal warrior", 6);
 
-		const ruleFactory = new RuleFactory();
-		const rule = ruleFactory.create("unitcap","KABAL");
-		console.log(rule);
+		const kabalWarriorUnit = new Unit("Kabal Warriors");
+		kabalWarriorUnit.add(kabalWarriorModel);
 
-		const factory = new ModelFactory();
-		const model = factory.create("kabal warrior", "KABAL");
-		console.log(model);
+		vanguardAttachment.add(kabalWarriorUnit);
+		console.log(vanguardAttachment);
+		
 	</script>
 </body>
 </html>
