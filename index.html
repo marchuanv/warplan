@@ -9,10 +9,10 @@
 		<script type="text/javascript">
 			const container = new Container();	
 			container.messenger("warplan.herokuapp.com",80).then((mes)=>{
+				const profile = new Profile(mes);
 				async function login(){
 					const username = document.getElementById("username").value;
 					const password = document.getElementById("password").value;
-					const profile = new Profile(mes);
 					await profile.login(username, password);
 				}
 			});
