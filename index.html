@@ -7,9 +7,14 @@
 	<body>
 		<div class="loader" id="loader"></div>
 		<script type="text/javascript">
-			getRemoteInstance("warplan", "Model").then(async(model) => {
-				document.getElementById("loader").style.display = "none";
-			});
+			(async() => {
+				// const container = new Container();
+				// const messenger = await container.messenger("warplan.herokuapp.com",80);
+				// await messenger.subscribe({ channel: "/user" },(msg) => {
+				// 	console.log(msg);
+				// });
+				// await messenger.publish({}, { channel: "/user", isOutboundMessage:true });
+			})();
 		</script>
 	</body>
 </html>
