@@ -8,14 +8,15 @@
 	<body>
 		<div class="loader" id="loader"></div>
 		<script type="text/javascript">
-			(async() => {
-				// const container = new Container();
-				// const messenger = await container.messenger("warplan.herokuapp.com",80);
-				// await messenger.subscribe({ channel: "/user" },(msg) => {
-				// 	console.log(msg);
-				// });
-				// await messenger.publish({}, { channel: "/user", isOutboundMessage:true });
-			})();
+			const container = new Container();	
+			container.messenger("warplan.herokuapp.com",80).then((mes)=>{
+				async function login(username, password){
+					const username = document.getElementById("username").value;
+					const password = document.getElementById("password").value;
+					const profile = new Profile(mes);
+					await profile.login(username, password);
+				}
+			});
 		</script>
 	</body>
 </html>
