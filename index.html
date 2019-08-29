@@ -7,14 +7,8 @@
 	<body>
 		<div class="loader" id="loader"></div>
 		<script type="text/javascript">
-			const container = new Container();	
-			container.messenger("warplan.herokuapp.com",80).then((mes)=>{
-				const profile = new Profile(mes);
-				async function login(){
-					const username = document.getElementById("username").value;
-					const password = document.getElementById("password").value;
-					await profile.login(username, password);
-				}
+			getRemoteInstance("warplan", "Model").then(async(model) => {
+				document.getElementById("loader").style.display = "none";
 			});
 		</script>
 	</body>
